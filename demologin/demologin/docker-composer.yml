@@ -1,0 +1,15 @@
+version: '3.8'
+service:
+  mysql:
+    imagen: mysql:8.0
+    container_name: mysql_login
+    restart: always
+    enviroment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: login
+      MYSQL_USER: rtroncoso
+      MYSQL_PASSWORD: rtroncoso123
+    ports:
+      -"3310:3306"
+    volumen:
+      - ./mysql_data:/var/lib/mysql
